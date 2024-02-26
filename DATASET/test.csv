@@ -1,0 +1,2 @@
+element,tag,id,type,class,name,aria-autocomplete,title,href,text,value,aria-label
+LOGIN,button,login-button,submit rounded block w-full text-size-14 h-40 tracking-widest font-bold uppercase g-recaptcha bg-black text-white disabled:opacity-50,None,None,None,None,LOGIN,None

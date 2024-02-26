@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter, Name Submission, and Clear Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #counter, #nameDisplayArea {
+            margin: 20px;
+            font-size: 24px;
+            padding: 10px;
+            border: 1px solid #000;
+            width: 200px;
+            text-align: center;
+        }
+        #nameDisplayArea {
+            background-color: #fff;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto; 
+        }
+        input, button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="buttonA" class="buttonA">Increment by 2</button>
+    <button id="buttonB">Decrement by 1</button>
+
+    <div style="margin-top: 20px;">
+        <input type="text" id="nameInput" placeholder="Enter your name"/>
+        <button id="submitName">Submit</button>
+    </div>
+
+    <div id="nameDisplayArea"></div>
+    <button id="clearNames">Clear</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var counter = document.getElementById('counter');
+            document.getElementById('buttonA').addEventListener('click', function() {
+                counter.innerText = parseInt(counter.innerText) + 2;
+            });
+            document.getElementById('buttonB').addEventListener('click', function() {
+                counter.innerText = parseInt(counter.innerText) - 1;
+            });
+
+            document.getElementById('submitName').addEventListener('click', function() {
+                var nameInput = document.getElementById('nameInput');
+                var nameDisplayArea = document.getElementById('nameDisplayArea');
+                if (nameInput.value.trim() !== '') {
+                    var newNameDiv = document.createElement('div');
+                    newNameDiv.textContent = nameInput.value;
+                    nameDisplayArea.appendChild(newNameDiv);
+                    nameInput.value = ''; 
+                }
+            });
+
+            
+            document.getElementById('clearNames').addEventListener('click', function() {
+                var nameDisplayArea = document.getElementById('nameDisplayArea');
+                nameDisplayArea.innerHTML = ''; 
+            });
+        });
+    </script>
+</body>
+</html>

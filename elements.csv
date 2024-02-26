@@ -1,0 +1,6 @@
+element,tag,id,type,class,name,aria-autocomplete,title,href,text,value,aria-label
+_token,input,None,hidden,None,_token,None,None,None,None,'0adfd746129e4a82882a057e9c97fd2e&quot',None
+email,input,None,email,form-control,email,None,None,None,None,None,None
+password,input,userpassword,password,form-control,password,None,None,None,None,None,None
+LOGIN,button,None,submit,btn btn-dark submit-btn,None,None,None,None,'Login',None,None
+on,input,None,checkbox,None,None,None,None,None,None,'on',None
